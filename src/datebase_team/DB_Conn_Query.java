@@ -74,7 +74,7 @@ public class DB_Conn_Query {
             rs = pstmt.executeQuery();
             while (rs.next()) {
                 arr.add(new missing(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),
-                		rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9))); 
+                		rs.getString(6), rs.getString(7), rs.getDate(8), rs.getString(9))); 
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -161,5 +161,9 @@ public class DB_Conn_Query {
             }
         }
 		return arr;
+    }
+    public static void main(String arg[]) throws SQLException, ParseException{
+    	DB_Conn_Query dbconquery = new DB_Conn_Query();
+    	dbconquery.read_adopt();
     }
 }

@@ -1,5 +1,7 @@
 package DTO;
 
+import java.sql.Date;
+
 public class missing {
 
 	String animal_num;
@@ -9,11 +11,11 @@ public class missing {
 	String unique;
 	String miss_place;
 	String miss_time;
-	String miss_date;
+	Date miss_date;
 	String id;
 	
 	public missing(String animal_num, String dog_name, String dog_kind, String sex, String unique, String miss_place,
-			String miss_time, String miss_date, String id) {
+			String miss_time, Date miss_date, String id) {
 		
 		this.animal_num = animal_num;
 		this.dog_name = dog_name;
@@ -72,10 +74,10 @@ public class missing {
 	public void miss_time(String miss_time) {
 		this.miss_time = miss_time;
 	}
-	public String miss_date() {
+	public Date miss_date() {
 		return miss_date;
 	}
-	public void miss_date(String miss_date) {
+	public void miss_date(Date miss_date) {
 		this.miss_date = miss_date;
 	}
 	public String id() {
