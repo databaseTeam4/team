@@ -94,6 +94,7 @@ public class DB_Conn_Query {
 
 
     //입양 신청 목록 출력 (select - statement + where 조건)
+    // 1. 해당 말일 구하는 함수
     public Date lastday(String date) {
     	DB_Connect();
     	Statement stmt = null;
@@ -118,8 +119,8 @@ public class DB_Conn_Query {
     }
     
 
-
-    public ArrayList<adopt> read_adopt2() throws ParseException, SQLException {
+    // 2.입양목록 출력
+    public ArrayList<adopt> read_adopt() throws ParseException, SQLException {
 		ArrayList<adopt> arr = new ArrayList<adopt>();
 		Statement stmt2 = null;
 		
@@ -146,6 +147,8 @@ public class DB_Conn_Query {
                 arr.add(new adopt(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),
                 		rs.getString(6), rs.getString(7))); 
             }	
+
+    		
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
