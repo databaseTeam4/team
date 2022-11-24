@@ -92,7 +92,8 @@ public class DB_Conn_Query {
     
     
 
-
+///////////해당 월에 입양 신청 내역이 없을 시 -> 신청 내역이 없다는 문장 추후 저장 프로시저 후 생각해보고 추가하겠습니다.
+    
     //입양 신청 목록 출력 (select - statement + where 조건)
     // 1. 해당 말일 구하는 함수
     public Date lastday(String date) {
@@ -147,8 +148,6 @@ public class DB_Conn_Query {
                 arr.add(new adopt(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),
                 		rs.getString(6), rs.getString(7))); 
             }	
-
-    		
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
@@ -161,9 +160,5 @@ public class DB_Conn_Query {
             }
         }
 		return arr;
-    }
-    public static void main(String arg[]) throws SQLException, ParseException{
-    	DB_Conn_Query dbconquery = new DB_Conn_Query();
-    	dbconquery.read_adopt();
     }
 }
